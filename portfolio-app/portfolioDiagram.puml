@@ -1,0 +1,72 @@
+@startuml
+class com.pluralsight.portfolio.app.BankAccount {
+- String name
+- String accountNumber
+- double balance
++ void deposit(Double)
++ void withdraw(Double)
++ double getValue()
+}
+
+
+class com.pluralsight.portfolio.app.Program {
++ {static} void main(String[])
+}
+
+class com.pluralsight.portfolio.app.House {
+- int yearBuilt
+- int squareFeet
+- int bedRooms
++ double getValue()
+}
+
+
+class com.pluralsight.portfolio.app.Portfolio {
+- String name
+- String owner
+- List<Valuable> assets
++ void add(Valuable)
++ double getValue()
+}
+
+
+class com.pluralsight.portfolio.app.CreditCard {
+- String name
+- String accountNumber
+- double balance
++ void charge(double)
++ void pay(double)
+}
+
+
+interface com.pluralsight.portfolio.app.Valuable {
+~ double getValue()
+}
+
+class com.pluralsight.portfolio.app.Gold {
+- double weight
++ double getValue()
+}
+
+
+class com.pluralsight.portfolio.app.Jewelry {
+- double karat
++ double getValue()
+}
+
+
+abstract class com.pluralsight.portfolio.app.FixedAsset {
+- String name
+- double marketValue
++ double getValue()
+}
+
+
+
+
+com.pluralsight.portfolio.app.Valuable <|.. com.pluralsight.portfolio.app.BankAccount
+com.pluralsight.portfolio.app.FixedAsset <|-- com.pluralsight.portfolio.app.House
+com.pluralsight.portfolio.app.FixedAsset <|-- com.pluralsight.portfolio.app.Gold
+com.pluralsight.portfolio.app.FixedAsset <|-- com.pluralsight.portfolio.app.Jewelry
+com.pluralsight.portfolio.app.Valuable <|.. com.pluralsight.portfolio.app.FixedAsset
+@enduml
