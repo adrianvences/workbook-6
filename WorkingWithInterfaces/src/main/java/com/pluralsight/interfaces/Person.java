@@ -27,8 +27,11 @@ public class Person implements Comparable<Person> {
     public int compareTo(Person o) {
         if( o == null) throw new NullPointerException("Object is null");
         System.out.println("comparing");
-        String s1 = o.getFirstName();
-        String s2 = this.getFirstName();
+        String s1 = o.getLastName();
+        String s2 = this.getLastName();
+        if (s2.compareToIgnoreCase(s1) == 0){
+            return this.getFirstName().compareToIgnoreCase(o.firstName);
+        }
         return s2.compareToIgnoreCase(s1);
     }
 
