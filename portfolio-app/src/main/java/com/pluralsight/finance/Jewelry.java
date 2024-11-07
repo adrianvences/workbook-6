@@ -1,4 +1,4 @@
-package com.pluralsight.portfolio.app;
+package com.pluralsight.finance;
 
 public class Jewelry extends FixedAsset {
     private double karat;
@@ -8,6 +8,9 @@ public class Jewelry extends FixedAsset {
         this.karat = karat;
     }
 
+    public double getKarat() {
+        return karat;
+    }
 
     @Override
     public double getValue() {

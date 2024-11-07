@@ -1,4 +1,4 @@
-package com.pluralsight.portfolio.app;
+package com.pluralsight.finance;
 
 public class BankAccount implements Valuable {
     private String name;

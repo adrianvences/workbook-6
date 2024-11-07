@@ -1,6 +1,6 @@
-package com.pluralsight.portfolio.app;
+package com.pluralsight.finance;
 
-public class CreditCard {
+public class CreditCard implements Valuable {
     private String name;
     private String accountNumber;
     private double balance;
@@ -16,5 +16,10 @@ public class CreditCard {
     }
     public void pay(double amount) {
         this.balance -= amount;
+    }
+
+    @Override
+    public double getValue() {
+        return 0;
     }
 }
