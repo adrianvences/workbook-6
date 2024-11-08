@@ -1,15 +1,14 @@
 package com.pluralsight;
 
-import com.pluralsight.finance.BankAccount;
-import com.pluralsight.finance.Valuable;
+import com.pluralsight.finance.*;
 
 public class FinancialApplication {
     public static void main(String[] args) {
-        BankAccount account1 = new BankAccount("pam", "123", 12500);
-        Valuable account2 = new BankAccount("gary","123", 1500);
-// try to deposit money into both accounts
-        account1.deposit(100.00);
-        account2.deposit(100.);
-  // Valuable only gives access to those methods.
+        Portfolio myPortfolio = new Portfolio("assets", "Adrian");
+        myPortfolio.add(new Jewelry("ring", 500, 14));
+        myPortfolio.add(new Gold("chain", 1000, 14));
+        myPortfolio.add(new House("myHouse", 350000, 2004,1500,3));
+//        System.out.println(myPortfolio.getMostValuable());
+        System.out.println(myPortfolio.getLeastValuable());
     }
 }

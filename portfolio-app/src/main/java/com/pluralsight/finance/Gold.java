@@ -11,6 +11,13 @@ public class Gold extends FixedAsset {
 
     @Override
     public double getValue() {
-        return weight * 2700.00;
+        return getMarketValue();
+    }
+
+    @Override
+    public String toString() {
+        return "Gold{" +
+                "weight=" + weight +
+                '}';
     }
 }

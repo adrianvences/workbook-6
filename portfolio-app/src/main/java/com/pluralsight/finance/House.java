@@ -15,6 +15,15 @@ public class House extends FixedAsset{
 
     @Override
     public double getValue() {
-        return 0;
+        return super.getMarketValue();
+    }
+
+    @Override
+    public String toString() {
+        return "House{" +
+                "yearBuilt=" + yearBuilt +
+                ", squareFeet=" + squareFeet +
+                ", bedRooms=" + bedRooms +
+                '}';
     }
 }

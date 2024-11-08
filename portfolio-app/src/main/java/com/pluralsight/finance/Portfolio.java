@@ -19,6 +19,38 @@ public class Portfolio {
     }
 
     public double getValue(){
-        return 0;
+        double sum = 0;
+        for(Valuable asset : assets){
+            sum += asset.getValue();
+        }
+
+        return sum;
+
+    }
+
+    public Valuable getMostValuable(){
+        Valuable mostValueAsset = null;
+        double highestValue = 0;
+        for(Valuable asset : assets){
+            if (asset.getValue() > highestValue){
+                highestValue = asset.getValue();
+                mostValueAsset = asset;
+                System.out.println(mostValueAsset);
+            }
+        }
+        return mostValueAsset;
+    }
+
+    // make sure this checks a credit card
+    public Valuable getLeastValuable(){
+        Valuable leastValueAsset = null;
+        double lowestValue = Double.MAX_VALUE;
+        for(Valuable asset : assets){
+            if (asset.getValue() < lowestValue){
+                lowestValue = asset.getValue();
+                leastValueAsset = asset;
+            }
+        }
+        return leastValueAsset;
     }
 }
